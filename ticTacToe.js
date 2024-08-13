@@ -14,6 +14,17 @@ function createBoard(){
 };
 
 const board = createBoard();
+
+const player1 = {
+    name: "Player 1",
+    marker: "[X]",
+};
+
+const player2 = {
+    name: "Player 2",
+    marker: "[O]",
+};
+
 board[0][1] = "[X]"
 console.log(board[1][2]);
 console.log(board);
