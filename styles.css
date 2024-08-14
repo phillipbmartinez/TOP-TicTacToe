@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+}
+#containerDiv {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    align-content: normal;
+    border: solid 1px black;
+    gap: 0;
+}
+
+.gameSquares {
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.gameSquares:hover {
+    background-color: beige;
+}
+
+#bottomContainer {
+    margin-top: 30px;
+    text-align: center;
+}
+#resetButton{
+    background-color: blue;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.25rem;
+}
