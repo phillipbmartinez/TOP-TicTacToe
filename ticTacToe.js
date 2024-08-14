@@ -37,8 +37,29 @@ function playGame() {
     };
 
     gameSquares.forEach(square => {
-        square.addEventListener('click', function() {
+        square.addEventListener('click', function () {
             square.textContent = player1.marker;
+            console.log(square1.textContent, square2.textContent, square3.textContent);
+            if ((square1.textContent === "X" && square2.textContent === "X" && square3.textContent === "X") ||
+                (square1.textContent === "X" && square4.textContent === "X" && square7.textContent === "X") ||
+                (square1.textContent === "X" && square5.textContent === "X" && square9.textContent === "X") ||
+                (square2.textContent === "X" && square5.textContent === "X" && square8.textContent === "X") ||
+                (square3.textContent === "X" && square5.textContent === "X" && square7.textContent === "X") ||
+                (square3.textContent === "X" && square6.textContent === "X" && square9.textContent === "X") ||
+                (square4.textContent === "X" && square5.textContent === "X" && square6.textContent === "X") ||
+                (square7.textContent === "X" && square8.textContent === "X" && square9.textContent === "X")) {
+                console.log("Player 1 wins.")
+            }
+            else if ((square1.textContent === "O" && square2.textContent === "O" && square3.textContent === "O") ||
+                (square1.textContent === "O" && square4.textContent === "O" && square7.textContent === "O") ||
+                (square1.textContent === "O" && square5.textContent === "O" && square9.textContent === "O") ||
+                (square2.textContent === "O" && square5.textContent === "O" && square8.textContent === "O") ||
+                (square3.textContent === "O" && square5.textContent === "O" && square7.textContent === "O") ||
+                (square3.textContent === "O" && square6.textContent === "O" && square9.textContent === "O") ||
+                (square4.textContent === "O" && square5.textContent === "O" && square6.textContent === "O") ||
+                (square7.textContent === "O" && square8.textContent === "O" && square9.textContent === "O")) {
+                console.log("Player 2 wins.")
+            }
         });
     });
 
@@ -98,7 +119,7 @@ function playGame() {
 
 resetButton.addEventListener("click", function () {
     gameSquares.forEach(div => {
-        div.textContent = "X";
+        div.textContent = "";
     });
 });
 
