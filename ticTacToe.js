@@ -1,3 +1,5 @@
+const gameSquares = document.querySelectorAll(".gameSquares");
+
 function createBoard() {
     const rows = 3;
     const columns = 3;
@@ -78,6 +80,12 @@ function playGame() {
         console.log("It's Draw");
     }
 };
+
+resetButton.addEventListener("click", function () {
+    gameSquares.forEach(div => {
+        div.textContent = "";
+    });
+});
 
 playGame();
 

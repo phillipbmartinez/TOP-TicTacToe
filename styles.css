@@ -24,7 +24,7 @@ body {
 }
 
 .gameSquares:hover {
-    background-color: beige;
+    background-color: hsl(195, 53%, 79%);
 }
 
 #bottomContainer {
@@ -32,10 +32,13 @@ body {
     text-align: center;
 }
 #resetButton{
-    background-color: blue;
+    background-color: hsl(240, 100%, 50%);
     color: white;
     padding: 5px 15px;
     border-radius: 15px;
     border: none;
     font-size: 1.25rem;
+}
+#resetButton:hover {
+    background-color: hsl(240, 100%, 35%);
 }
