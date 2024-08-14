@@ -16,6 +16,15 @@ function createBoard() {
 
 function playGame() {
     const board = createBoard();
+    const square1 = document.getElementById("square1");
+    const square2 = document.getElementById("square2");
+    const square3 = document.getElementById("square3");
+    const square4 = document.getElementById("square4");
+    const square5 = document.getElementById("square5");
+    const square6 = document.getElementById("square6");
+    const square7 = document.getElementById("square7");
+    const square8 = document.getElementById("square8");
+    const square9 = document.getElementById("square9");
 
     const player1 = {
         name: "Player 1",
@@ -27,14 +36,21 @@ function playGame() {
         marker: "O",
     };
 
-    board[0][2] = player1.marker;
-    board[1][0] = player1.marker;
-    board[2][0] = player1.marker;
-    board[0][0] = player2.marker;
-    board[1][1] = player2.marker;
-    board[2][2] = player2.marker;
+    gameSquares.forEach(square => {
+        square.addEventListener('click', function() {
+            square.textContent = player1.marker;
+        });
+    });
 
-    const firstRow = board[0];
+    // board[0][2] = player1.marker;
+    // board[1][0] = player1.marker;
+    // board[2][0] = player1.marker;
+    // board[0][0] = player2.marker;
+    // board[1][1] = player2.marker;
+    // board[2][2] = player2.marker;
+
+    // const firstRow = board[0];
+    const firstRow = [square1, square2, square3];
     const secondRow = board[1];
     const thirdRow = board[2];
     const firstColumn = [board[0][0], board[1][0], board[2][0]];
@@ -44,7 +60,6 @@ function playGame() {
     const secondDiagonal = [board[0][2], board[1][1], board[2][0]];
 
     // Log the board and rows
-    // console.log("Board:", board);
     console.log("First Row:", firstRow);
     console.log("Second Row:", secondRow);
     console.log("Third Row:", thirdRow);
@@ -83,9 +98,11 @@ function playGame() {
 
 resetButton.addEventListener("click", function () {
     gameSquares.forEach(div => {
-        div.textContent = "";
+        div.textContent = "X";
     });
 });
+
+
 
 playGame();
 
