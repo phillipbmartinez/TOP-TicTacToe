@@ -44,7 +44,7 @@ function updateSquare(square, index){
 
 function changePlayer(){
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
-    statusText.textContent = `${currentPlayer}'s turn`;
+    gameResults.textContent = `${currentPlayer}'s turn`;
 }
 
 function checkWinner(){
@@ -66,11 +66,11 @@ function checkWinner(){
     }
 
     if(roundWon){
-        statusText.textContent = `${currentPlayer} wins!`;
+        gameResults.textContent = `${currentPlayer} wins!`;
         running = false;
     }
     else if(!options.includes("")){
-        statusText.textContent = `Draw!`;
+        gameResults.textContent = `Draw!`;
         running = false;
     }
     else{
@@ -85,11 +85,3 @@ function restartGame(){
     gameSquares.forEach(square => square.textContent = "");
     running = true;
 }
-
-
-
-
-
-
-
-
