@@ -19,17 +19,17 @@ let running = false;
 
 initializeGame();
 
-function initializeGame(){
+function initializeGame() {
     gameSquares.forEach(square => square.addEventListener("click", squareClicked));
     resetButton.addEventListener("click", restartGame);
     gameResults.textContent = `${currentPlayer}'s turn`;
     running = true;
 }
 
-function squareClicked(){
+function squareClicked() {
     const squareIndex = this.getAttribute("squareIndex");
 
-    if(options[squareIndex] != "" || !running){
+    if (options[squareIndex] != "" || !running) {
         return;
     }
 
@@ -37,48 +37,48 @@ function squareClicked(){
     checkWinner();
 }
 
-function updateSquare(square, index){
+function updateSquare(square, index) {
     options[index] = currentPlayer;
     square.textContent = currentPlayer;
 }
 
-function changePlayer(){
+function changePlayer() {
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
     gameResults.textContent = `${currentPlayer}'s turn`;
 }
 
-function checkWinner(){
+function checkWinner() {
     let roundWon = false;
 
-    for(let i = 0; i < winConditions.length; i++){
+    for (let i = 0; i < winConditions.length; i++) {
         const condition = winConditions[i];
         const squareA = options[condition[0]];
         const squareB = options[condition[1]];
         const squareC = options[condition[2]];
 
-        if(squareA == "" || squareB == "" || squareC == ""){
+        if (squareA == "" || squareB == "" || squareC == "") {
             continue;
         }
-        if(squareA == squareB && squareB == squareC){
+        if (squareA == squareB && squareB == squareC) {
             roundWon = true;
             break;
         }
     }
 
-    if(roundWon){
+    if (roundWon) {
         gameResults.textContent = `${currentPlayer} wins!`;
         running = false;
     }
-    else if(!options.includes("")){
+    else if (!options.includes("")) {
         gameResults.textContent = `Draw!`;
         running = false;
     }
-    else{
+    else {
         changePlayer();
     }
 }
 
-function restartGame(){
+function restartGame() {
     currentPlayer = "X";
     options = ["", "", "", "", "", "", "", "", ""];
     gameResults.textContent = `${currentPlayer}'s turn`;
