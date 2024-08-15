@@ -21,7 +21,7 @@ body {
     height: auto;
     align-content: center;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 5rem;
     font-weight: bold;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 #bottomContainer {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -45,4 +45,10 @@ body {
 
 #resetButton:hover {
     background-color: hsl(240, 100%, 35%);
+}
+
+#gameResults {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
